@@ -11,9 +11,7 @@ class Trail < ApplicationRecord
 
     def self.highest_rated_trail 
         # looks through all trails, finds the average trail rating in a new array then find the highest value from that array and return the trail object that has it. 
-        Trail.all
+        array = Trail.all.map{|trail| trail.average_trail_rating}
     end 
 
-
 end
-array = Train.all.map{|trail|trail.average_trail_rating
