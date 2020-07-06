@@ -15,20 +15,25 @@ def random_boolean
 end
 
 30.times do |x|
-    User.create(name: Faker::FunnyName.name)
+    User.create(name: Faker::FunnyName.unique.name)
 end 
 
 30.times do |x|
-    Trail.create(name: Faker::Address.unique.city, distance_of_trail: rand(1..1000), elevation: rand(1..8000), difficulty: random_difficulty , park: Park.all.sample )
-end
-
-30.times do |x|
     Park.create(
-        name: Faker::TvShows::RickAndMorty.unique.character,
+        name: Faker::Movie.unique.title,
         park_info: Faker::Hipster.sentences,
         waterfalls: random_boolean
     )
 end
+
+30.times do |x|
+    Trail.create(name: Faker::Address.unique.city, distance_of_trail: rand(1..1000), elevation: rand(1..8000), difficulty: random_difficulty, park: Park.all.sample )
+end
+
+25.times do |x|
+    Hike.create(name: Faker::Hipster.unique.word, user: User.all.sample, trail: Trail.all.sample, user_rating: rand(1..10))
+end
+
 
 50.times do |x|
     State.create(name: Faker::Address.unique.state)
@@ -39,6 +44,3 @@ end
 end 
 
 
-25.times do |x|
-    Hike.create(name: Faker::Hipster.unique.word, user: User.all.sample, trail: Trail.all.sample, user_rating: rand(1..10))
-end
