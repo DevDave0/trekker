@@ -1,7 +1,44 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
+Trail.destroy_all
+Hike.destroy_all
+Park.destroy_all
+State.destroy_all
+ParkState.destroy_all
+
+def random_difficulty
+    diff = ["easy", "medium", "strong"]
+    return diff.sample
+end 
+
+def random_boolean
+    return rand(0..1.0) > 0.5
+end
+
+30.times do |x|
+    User.create(name: Faker::FunnyName.name)
+end 
+
+30.times do |x|
+    Trail.create(name: Faker::Address.unique.city, distance_of_trail: rand(1..1000), elevation: rand(1..8000), difficulty: random_difficulty , park: Park.all.sample )
+end
+
+30.times do |x|
+    Park.create(
+        name: Faker::TvShows::RickAndMorty.unique.character,
+        park_info: Faker::Hipster.sentences,
+        waterfalls: random_boolean
+    )
+end
+
+50.times do |x|
+    State.create(name: Faker::Address.unique.state)
+end
+
+30.times do |x|
+    ParkState.create(park: Park.all.sample, state: State.all.sample)
+end 
+
+
+25.times do |x|
+    Hike.create(name: Faker::Hipster.unique.word, user: User.all.sample, trail: Trail.all.sample, user_rating: rand(1..10))
+end
