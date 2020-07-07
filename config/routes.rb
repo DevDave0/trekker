@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   get "/", to: "application#homepage", as: "homepage"
+  get "/login", to: "sessions#login"
+  post "/login", to: "sessions#process_login"
+  get "/logout", to: "sessions#logout"
 
 
   resources :states

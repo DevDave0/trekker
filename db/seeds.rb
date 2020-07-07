@@ -26,11 +26,11 @@ end
     )
 end
 
-30.times do |x|
+20.times do |x|
     Trail.create(name: Faker::Address.unique.city, distance_of_trail: rand(1..1000), elevation: rand(1..8000), difficulty: random_difficulty, park: Park.all.sample )
 end
 
-50.times do |x|
+80.times do |x|
     Hike.create(name: Faker::Hipster.unique.word, user: User.all.sample, trail: Trail.all.sample, user_rating: rand(1..10))
 end
 
