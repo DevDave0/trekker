@@ -8,7 +8,8 @@ class SessionsController < ApplicationController
         @user = User.find_by(name: username)
         if @user
             session["user"] = @user.id
-            redirect_to user_path(@user.id)
+            flash[:message] = "User logged in"
+            redirect_to states_path
         else 
             flash.now[:error] = "No user found with that name"
             render :login

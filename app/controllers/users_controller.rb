@@ -7,7 +7,11 @@ class UsersController < ApplicationController
 
     def create 
         @user = User.create(user_params)
-        redirect_to states_path
+        if @user.valid?
+            redirect_to states_path
+        else 
+            render :new 
+        end
     end 
 
     def edit 
