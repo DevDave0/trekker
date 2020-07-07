@@ -3,10 +3,13 @@ class Trail < ApplicationRecord
     has_many :users, through: :hikes
     belongs_to :park
 
-    def average_trail_rating 
+    validates :average_trail_rating, presence: true
+
+    def average_trail_rating  
         result = self.hikes.map{|hike| hike.user_rating}
         sum = result.reduce(:+)
-        sum/result.count
+        x = result.count
+        sum/x
     end 
 
     def self.highest_rated_trail 
