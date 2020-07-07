@@ -1,27 +1,2 @@
 <h1><%= @user.name %></h1>
 
-<div>Trails that I have hiked: 
-    <ul>
-        <% @user.trails.each do |trail| %>
-            <li><%= link_to trail.name, trail_path(trail.id) %></li>
-        <% end %>
-    </ul>
-</div>
-
-<div>Parks I have been to: 
-    <ul>
-        <% @user.trails.each do |trail| %>
-            <li><%= link_to trail.park.name, park_path(trail.park.id) %></li>
-        <% end %>
-    </ul>
-</div>
-
-<div>States I've visited: 
-    <ul>
-        <li><%= link_to @user.states.name, state_path(@user.states.id) %></li>
-    </ul>
-</div>
-
-<div>Number of hikes I've done: 
-    <%= @user.hikes.count %>
-</div>
