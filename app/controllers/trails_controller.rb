@@ -5,7 +5,7 @@ class TrailsController < ApplicationController
     end 
 
     def index 
-        @trails = Trail.all
+        @trails = Trail.all.sort_by_first_letter
     end 
 
 end

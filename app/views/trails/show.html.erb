@@ -1,0 +1,9 @@
+<h1><%=@trail.name%></h1>
+
+<h4>Trail Information:</h4>
+    <div>Park: <%= @trail.park.name %></div>
+    <div>Trail distance: <%= "#{@trail.distance_of_trail} miles " %></div>
+    <div>Trail elevation: <%= "#{@trail.elevation} feet above sea level" %></div>
+    <div>Trail difficulty: <%= @trail.difficulty.capitalize %></div>
+
+<div>Number of Hikers that have completed this trail: <%= @trail.total_hikers %></div>

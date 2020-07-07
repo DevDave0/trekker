@@ -5,7 +5,7 @@ class StatesController < ApplicationController
     end 
 
     def index 
-        @states = State.all
+        @states = State.all.sort_by_first_letter
     end 
 
 

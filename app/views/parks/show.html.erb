@@ -1,0 +1,13 @@
+<h1><%= @park.name %></h1>
+
+<p>Park Information:</p>
+<div><%= @park.park_info %></div>
+
+<p>Waterfalls? <%= @park.has_waterfalls? %></p>
+
+<p>List of trails:</p> 
+<ul>
+    <% @park.trails.each do |trail| %>
+        <li><%= link_to trail.name, trail_path(trail.id) %></li>
+    <% end %>
+</ul>

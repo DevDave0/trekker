@@ -25,7 +25,8 @@ class Trail < ApplicationRecord
     def self.shortest_trail 
     end 
 
-    def total_hikes 
+    def total_hikers 
+        self.hikes.count
     end 
 
     def self.all_total_hikes 
@@ -47,6 +48,10 @@ class Trail < ApplicationRecord
     end 
 
     def self.moderate_trails 
+    end 
+
+    def self.sort_by_first_letter 
+        Trail.order('name ASC')
     end 
 
 
