@@ -30,6 +30,7 @@ class Trail < ApplicationRecord
     end 
 
     def self.all_total_hikes 
+        self.all.map{|trail| trail.hikes}.count
     end 
 
     def self.total_distance_of_all_trails 

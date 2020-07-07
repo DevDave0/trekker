@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get "/", to: "application#homepage", as: "homepage"
+
+
   resources :states
   resources :park_states
   resources :parks
