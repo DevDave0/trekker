@@ -8,4 +8,5 @@ class TrailsController < ApplicationController
         @trails = Trail.all.sort_by_first_letter
     end 
 
+
 end

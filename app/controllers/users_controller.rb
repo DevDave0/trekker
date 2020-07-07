@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
     before_action :find_user, only: [:show, :edit, :update, :destroy]
+    before_action :authorized, except: [:new, :create]
 
     def new 
         @user = User.new
@@ -41,6 +42,6 @@ class UsersController < ApplicationController
     end 
 
     def user_params 
-        params.require(:user).permit(:name)
+        params.require(:user).permit(:name, :password)
     end 
 end
