@@ -23,6 +23,12 @@ class Trail < ApplicationRecord
 
     def self.lowest_rated_trail 
         # looks through all trails, finds the average trail rating in a new array then find the lowest value from that array and return the trail object that has it. 
+        min = Trail.all.map{|trail| trail.average_trail_rating}.min
+        Trail.all.each do |trail|
+            if trail.average_trail_rating == min 
+                return trail
+            end 
+        end 
 
     end 
 
