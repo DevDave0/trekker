@@ -1,9 +1,5 @@
 class HikesController < ApplicationController
-    before_action :find_hike, only: [:show, :edit, :update, :destroy]
-
-    def index 
-        @hikes = Hike.all
-    end 
+    before_action :find_hike, only: [:show]
 
     def show 
     end 
@@ -20,19 +16,6 @@ class HikesController < ApplicationController
         @hike.trail_id = params[:trail_id]
         @hike.save
         redirect_to trail_hike_path(@hike.trail_id, @hike.id)
-    end 
-
-    def edit 
-    end 
-
-    def update 
-        @hike.update(hike_params)
-        redirect_to hike_path(@hike)
-    end 
-
-    def destroy 
-        @hike.destroy 
-        redirect_to hikes_path
     end 
 
     private 

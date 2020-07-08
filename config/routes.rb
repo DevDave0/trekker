@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :park_states
   resources :parks
   resources :trails do 
-    resources :hikes, only: [:new, :create, :show]
+    resources :hikes, only: [:new, :create, :show, :destroy]
   end 
     
   resources :users
