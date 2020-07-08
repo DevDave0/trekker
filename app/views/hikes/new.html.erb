@@ -1,10 +1,10 @@
 <h1> New Hike </h1>
 
-<%= form_for @hike do |f| %>
+<%= form_for @hike, url:trail_hikes_path do |f| %>
     <%= f.label 'Name your Hike!' %>
     <%= f.text_field :name %>
     <%= f.label :trails %>
-    <%= f.collection_select :trail_id, Trail.all, :id, :name %>
+    
 
     <%= f.submit %>
 <% end %>

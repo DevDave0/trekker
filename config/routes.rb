@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   resources :states
   resources :park_states
   resources :parks
-  resources :trails
-  resources :hikes
+  resources :trails do 
+    resources :hikes, only: [:new, :create]
+  end 
+    
   resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

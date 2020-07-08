@@ -9,4 +9,4 @@
 
 <div>Number of Hikers that have completed this trail: <%= @trail.total_hikers %></div>
 
-<%= link_to "Add this Hike", new_hike_path %>
+<%= link_to "Add this Hike", new_trail_hike_path(@trail.id) %>
