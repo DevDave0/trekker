@@ -1,11 +1,16 @@
 class HikesController < ApplicationController
     before_action :find_hike, only: [:show]
+    before_action :authorized
 
     def show 
     end 
 
     def new 
-        @hike = Hike.new
+        if current_user
+            @hike = Hike.new
+        else 
+            redirect_to login_path 
+        end 
     end 
 
     def create 
