@@ -10,6 +10,20 @@
   </head>
 
   <body>
+    <% unless controller_name == "sessions" && action_name == "login" %>
+
+      <% if session["user"] %>
+        <div>Welcome <%= current_user.name %></div>
+        <%= link_to "Log out", logout_path %>
+
+      <% else %>
+        <%= link_to "Log in", login_path %>
+
+      <% end %> 
+
+    <% end %>
+
     <%= yield %>
   </body>
+
 </html>

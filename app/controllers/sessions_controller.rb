@@ -7,13 +7,12 @@ class SessionsController < ApplicationController
         username = params[:name]
         @user = User.find_by(name: username)
         if @user && @user.authenticate(params[:password])
-
             session["user"] = @user.id
             flash[:message] = "User logged in"
             redirect_to states_path
         else 
             flash.now[:error] = "No user found with that name and password"
-            redirect_to :login
+            render :login
         end 
     end 
 
