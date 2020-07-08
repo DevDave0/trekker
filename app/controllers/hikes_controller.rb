@@ -13,8 +13,13 @@ class HikesController < ApplicationController
     end 
 
     def create 
-        @hike = Hike.create(hike_params)
-        redirect_to hike_path(@hike)
+        @hike = Hike.new
+        @hike.name = params[:hike][:name]
+        @hike.user_rating = params[:hike][:user_rating]
+        @hike.user_id = current_user.id
+        @hike.trail_id = params[:trail_id]
+        @hike.save
+        redirect_to trail_hike_path(@hike.trail_id, @hike.id)
     end 
 
     def edit 
@@ -36,9 +41,9 @@ class HikesController < ApplicationController
         @hike = Hike.find(params[:id])
     end 
 
-    def hike_params 
-        params.require(:hike).permit(:name, :user_id, :trail_id)
-    end 
+    # def hike_params 
+    #     params.require(:hike).permit(:name, :user_rating, :user_id, :trail_id)
+    # end 
 
 
 end

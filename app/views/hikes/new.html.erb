@@ -3,8 +3,8 @@
 <%= form_for @hike, url:trail_hikes_path do |f| %>
     <%= f.label 'Name your Hike!' %>
     <%= f.text_field :name %>
-    <%= f.label :trails %>
-    
+    <%= f.label "Rate the this trail" %>
+    <%= f.select :user_rating, options_for_select(0..10) %>
 
     <%= f.submit %>
 <% end %>
