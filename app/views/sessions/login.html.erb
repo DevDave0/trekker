@@ -1,20 +1,28 @@
-<h1 class="title"> Log In </h1>
+
+<body>
+    <div class='login'>
+        <h1 class="title"> Log In </h1>
 
 
-<% if flash[:error] %>
-    <div class="error"> <%= flash[:error] %> </div>
-<% end %>
+        <% if flash[:error] %>
+            <div class="error"> <%= flash[:error] %> </div>
+        <% end %>
 
-<div class="login_form">
-    <%= form_tag login_path do %>
-        <%= label :name, "Username:" %>
-        <%= text_field_tag :name %>
-        <%= label :password, "Password" %>
-        <%= password_field_tag :password %>
-        <%= submit_tag "Log In" %>
-    <% end %> 
-</div>
 
-<div class="new_user">
-    <%= link_to "Create a New User", new_user_path %>
-</div>
+        <div class="login_form">
+            <%= form_tag login_path do %>
+                <%= label :name, "Username:" %>
+                <%= text_field_tag :name %>
+                <%= label :password, "Password" %>
+                <%= password_field_tag :password %>
+                <%= submit_tag "Log In" %>
+            <% end %> 
+        </div>
+
+        <br>
+
+        <div class="new_user">
+            <%= link_to "Create a New User", new_user_path %>
+        </div>
+    </div>
+</body>
