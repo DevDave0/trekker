@@ -1,2 +1,13 @@
 <h1><%= @user.name %></h1>
 
+<div>All my Hikes:
+    <ul>
+        <% @user.hikes.each do |hike| %>
+            <li><%= link_to hike.name, trail_hike_path(hike.trail_id, hike.id) %></li>
+        <% end %>
+    </ul>
+
+</div>
+
+<div>Total distance I've hiked: </div>
+<div>Total Elevation gain: </div>
