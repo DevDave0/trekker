@@ -13,4 +13,12 @@ class User < ApplicationRecord
             end 
         end 
     end 
+
+    def total_distance_hiked 
+        self.trails.map{|trail| trail.distance_of_trail}.sum
+    end 
+
+    def total_elevation_gain 
+        self.trails.map{|trail| trail.elevation}.sum 
+    end 
 end
