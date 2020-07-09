@@ -11,21 +11,6 @@
     <div>Trail difficulty: <%= "#{@hike.trail.difficulty}" %></div>
     <div>Average trail rating: <%= "#{@hike.trail.average_trail_rating}" %></div>
 
-    
-
- <%
-=begin%>
- <div>Park: <%= link_to @trail.park.name, park_path(@trail.park.id) %></div>
-    <div>Trail distance: <%= "#{@trail.distance_of_trail} miles " %></div>
-    <div>Trail elevation: <%= "#{@trail.elevation} feet above sea level" %></div>
-    <div>Trail difficulty: <%= @trail.difficulty.capitalize %></div>
-    <div>Average trail rating: <%= @trail.average_trail_rating %></div>  
-<%
-=end%>
-
-
-
-
 
 <%= link_to "Go back to trail list", trails_path %>
 

@@ -11,23 +11,35 @@
   </head>
 
   <body>
-    <% unless controller_name == "sessions" && action_name == "login" %>
+    <nav class='navbar is-dark'>
+          <div class='navbar-menu'>
+            <div><%= link_to "Homepage", homepage_path, class: 'navbar-item' %></div>
+            <div><%= link_to "Trails", trails_path, class: 'navbar-item' %></div>
+          </div>
 
-      <% if session["user"] %>
-        <div>Welcome <%= current_user.name %></div>
-        <div><%= link_to "Profile", user_path(current_user.id) %></div>
-        <div><%= link_to "Homepage", homepage_path %></div>
-        <div><%= link_to "Trails", trails_path %></div>
-        <%= link_to "Log out", logout_path %>
+      <% unless controller_name == "sessions" && action_name == "login" %>
 
-      <% else %>
-        <%= link_to "Log in", login_path %>
 
-      <% end %> 
+        <% if session["user"] %>
+          
+            <div>Welcome <%= current_user.name %></div>
+            <div><%= link_to "Profile", user_path(current_user.id), class: 'navbar-item' %></div>
+            <div><%= link_to "Log out", logout_path, class: 'navbar-item' %></div>
 
-    <% end %>
+        <% else %>
+          <%= link_to "Log in", login_path %>
 
-    <%= yield %>
+        <% end %> 
+
+      <% end %>
+
+    </nav>
+
+    <section id="bg">
+      <div class='container' id='main_container'>
+      <%= yield %>
+      </div>
+    </section>
   </body>
 
 </html>

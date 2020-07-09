@@ -20,8 +20,19 @@
      padding: 10px;
  }
 
+html {
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+}
+
 body {
     text-align: center;
+    background-image: url('F99A9715.jpg');
+    background-size: cover;
+    margin: 0px;
+    min-height: 100%;
+    width: 100%;
 }
 
 /* login page */
@@ -32,5 +43,19 @@ body {
     border: 1px solid #888; 
     width: 80%; 
     text-align: center;
+}
+
+nav {
+    padding:.5em;
+
+}
+
+.navbar-menu a {
+    color: white;
+    font-weight: bold;
+}
+
+.navbar-item {
+    padding: 1em;
 }
 
