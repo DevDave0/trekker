@@ -4,6 +4,8 @@
 
 <h3>National Parks:<h3>
 
+<br>
+
 <ul> 
     <% @state.parks.each do |park| %>
         <li><%= link_to park.name, park_path(park.id) %></li>
