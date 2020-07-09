@@ -1,9 +1,11 @@
 
 <div class='login'>
 <h1 class='title is-1'>All trails</h1>
-<%= select("trail", "name", Trail.all.collect(&:name).sort) %>
-
-
+<%
+=begin%>
+ <%= select("trail", "name", Trail.all.collect(&:name).sort) %> 
+<%
+=end%>
 
 <ul>
     <% @trails.each do |trail| %>

@@ -58,6 +58,11 @@ nav {
     font-weight: bold;
 }
 
+.navbar-right a {
+    color: white;
+    font-weight: bold;
+}
+
 .navbar-item {
     padding: 1em;
 }

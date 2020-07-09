@@ -5,7 +5,6 @@ class Trail < ApplicationRecord
 
     validates :name, presence: true, uniqueness: true
 
-
     def average_trail_rating  
         result = self.hikes.map{|hike| hike.user_rating}
         sum = result.reduce(:+)
