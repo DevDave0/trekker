@@ -3,10 +3,7 @@
 <h1 class='title is-1'>All trails</h1>
 <%= select("trail", "name", Trail.all.collect(&:name).sort) %>
 
-<%= form_for @trails do |f| %>
-    <%= f.collection_select :trail, Trail.all, :id, :name %>
-    <%= f.submit %>
-<% end %>
+
 
 <ul>
     <% @trails.each do |trail| %>
