@@ -24,12 +24,14 @@ html {
     margin: 0px;
     height: 100%;
     width: 100%;
+    background-image: url('F99A9715.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 body {
     text-align: center;
-    background-image: url('F99A9715.jpg');
-    background-size: cover;
     margin: 0px;
     min-height: 100%;
     width: 100%;
@@ -48,6 +50,7 @@ body {
 
 nav {
     padding:.5em;
+    opacity: 0.7;
 }
 
 .navbar-menu a {
@@ -59,3 +62,8 @@ nav {
     padding: 1em;
 }
 
+.log-in-button {
+    color: white;
+    font-weight: bold;
+    padding: 1em;
+}
