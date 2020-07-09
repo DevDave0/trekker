@@ -1,4 +1,6 @@
-<h1><%=@trail.name%></h1>
+<div class='login'>
+
+<h1 class='title is-2'><%=@trail.name%></h1>
 
 <h4>Trail Information:</h4>
     <div>Park: <%= link_to @trail.park.name, park_path(@trail.park.id) %></div>
@@ -10,3 +12,5 @@
 <div>Number of Hikers that have completed this trail: <%= @trail.total_hikers %></div>
 
 <%= link_to "Add this Hike", new_trail_hike_path(@trail.id) %>
+
+</div>

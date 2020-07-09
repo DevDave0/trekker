@@ -1,4 +1,6 @@
-<h1><%= @state.name %></h1>
+
+<div class='login'>
+<h1 class='title is-2'><%= @state.name %></h1>
 
 <h3>National Parks:<h3>
 
@@ -7,3 +9,4 @@
         <li><%= link_to park.name, park_path(park.id) %></li>
     <% end %>
 </ul>
+</div>

@@ -1,4 +1,6 @@
-<h1><%= @park.name %></h1>
+
+<div class='login'>
+<h1 class='title is-2'><%= @park.name %></h1>
 
 <p>Park Information:</p>
 <div><%= @park.park_info %></div>
@@ -11,3 +13,4 @@
         <li><%= link_to trail.name, trail_path(trail.id) %></li>
     <% end %>
 </ul>
+</div>

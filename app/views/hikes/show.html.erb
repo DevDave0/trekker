@@ -1,17 +1,20 @@
-<h1><%= @hike.name %></h1>
-<p>My trail rating: <%= @hike.user_rating %></p>
+<div class='login'>
 
-<br><br>
+    <h1 class='title is-2'><%= @hike.name %></h1>
+    <p>My trail rating: <%= @hike.user_rating %></p>
 
-<h4>Trail Information:</h4>
-    <div>Trail: <%= link_to @hike.trail.name, trail_path(@hike.trail.id) %></div>
-    <div>Park: <%= link_to @hike.trail.park.name, park_path(@hike.trail.park.id) %></div>
-    <div>Trail distance: <%= "#{@hike.trail.distance_of_trail} miles" %></div>
-    <div>Trail elevation gain: <%= "#{@hike.trail.elevation} feet" %></div>
-    <div>Trail difficulty: <%= "#{@hike.trail.difficulty}" %></div>
-    <div>Average trail rating: <%= "#{@hike.trail.average_trail_rating}" %></div>
+    <br><br>
+
+    <h4 class='title is-5'>Trail Information:</h4>
+        <div>Trail: <%= link_to @hike.trail.name, trail_path(@hike.trail.id) %></div>
+        <div>Park: <%= link_to @hike.trail.park.name, park_path(@hike.trail.park.id) %></div>
+        <div>Trail distance: <%= "#{@hike.trail.distance_of_trail} miles" %></div>
+        <div>Trail elevation gain: <%= "#{@hike.trail.elevation} feet" %></div>
+        <div>Trail difficulty: <%= "#{@hike.trail.difficulty}" %></div>
+        <div>Average trail rating: <%= "#{@hike.trail.average_trail_rating}" %></div>
 
 
-<%= link_to "Go back to trail list", trails_path %>
+    <%= link_to "Go back to trail list", trails_path %>
 
 
+</div>
