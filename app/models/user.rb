@@ -5,6 +5,7 @@ class User < ApplicationRecord
     has_many :trails, through: :hikes
     
     validates :name, presence: true, uniqueness: {case_sensitive: false}
+    validates :password, presence: true, length: { minimum: 4 }
 
     def states 
         self.trails.each do |trail|

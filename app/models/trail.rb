@@ -3,6 +3,9 @@ class Trail < ApplicationRecord
     has_many :users, through: :hikes
     belongs_to :park
 
+    validates :name, presence: true, uniqueness: true
+
+
     def average_trail_rating  
         result = self.hikes.map{|hike| hike.user_rating}
         sum = result.reduce(:+)
@@ -32,12 +35,6 @@ class Trail < ApplicationRecord
 
     end 
 
-    def self.longest_trail 
-    end 
-
-    def self.shortest_trail 
-    end 
-
     def total_hikers 
         self.hikes.count
     end 
@@ -46,23 +43,7 @@ class Trail < ApplicationRecord
         self.all.map{|trail| trail.hikes}.count
     end 
 
-    def self.total_distance_of_all_trails 
-    end 
 
-    def self.highest_elevated_trails
-    end 
-
-    def self.lowest_elevated_trails
-    end 
-
-    def self.hardest_trails 
-    end 
-
-    def self.easiest_trails 
-    end 
-
-    def self.moderate_trails 
-    end 
 
     def self.sort_by_first_letter 
         Trail.order('name ASC')
