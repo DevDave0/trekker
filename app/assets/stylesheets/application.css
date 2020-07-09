@@ -20,6 +20,10 @@
      padding: 10px;
  }
 
+body {
+    text-align: center;
+}
+
 /* login page */
 .login {
     padding: 20px;
@@ -29,3 +33,4 @@
     width: 80%; 
     text-align: center;
 }
+
