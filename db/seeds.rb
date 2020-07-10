@@ -262,6 +262,6 @@ Trail.create(name: "The Narrows", distance_of_trail: 6, elevation: 2800, difficu
 Trail.create(name: "Watchman Trail", distance_of_trail: 3, elevation: 646, difficulty: random_difficulty, park: zion)
 
 
-80.times do |x|
+100.times do |x|
     Hike.create(name: Faker::Hipster.unique.word, user: User.all.sample, trail: Trail.all.sample, user_rating: rand(1..10))
 end
