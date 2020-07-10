@@ -18,8 +18,8 @@ Video demo link:
 ## Installation Instructions 
 
 1. Clone repository to your computer 
-2. Run bundle install to install required Gems. 
-3. Run rails db:migrate to migrate the schema then rails db:seed to fill data. 
-4. Run rails s to start localhost to enter into the application. 
+2. Run `bundle install` to install required Gems. 
+3. Run `rails db:migrate` to migrate the schema then `rails db:seed` to fill data. 
+4. Run `rails s` to start localhost(http://localhost:3000/) to enter into the application. 
 
 Project was built using Rails. 
