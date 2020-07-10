@@ -12,7 +12,7 @@ Trekker is an application that allows a user to:
 4. See a profile page showing all past hikes.
 5. See the statistics across all hikes on profile page. 
 
-Video demo link: 
+Video demo link: https://youtu.be/pru2Xp3RobU
 
 
 ## Installation Instructions 
