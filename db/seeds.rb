@@ -11,11 +11,6 @@ def random_difficulty
 end 
 
 
-80.times do |x|
-    Hike.create(name: Faker::Hipster.unique.word, user: User.all.sample, trail: Trail.all.sample, user_rating: rand(1..10))
-end
-
-
 # actual seed data 
 # 50 states 
 
@@ -256,7 +251,7 @@ ParkState.create(park: harpers, state: WV)
 ParkState.create(park: tetons, state: WY)
 
 
-300.times do |x|
+200.times do |x|
     Trail.create(name: Faker::Address.unique.city, distance_of_trail: rand(1..1000), elevation: rand(1..8000), difficulty: random_difficulty, park: Park.all.sample )
 end
 
@@ -265,3 +260,8 @@ Trail.create(name: "Weeping Rock Trail", distance_of_trail: 1, elevation: 98, di
 Trail.create(name: "Angel's Landing", distance_of_trail: 3, elevation: 5790, difficulty: random_difficulty, park: zion)
 Trail.create(name: "The Narrows", distance_of_trail: 6, elevation: 2800, difficulty: random_difficulty, park: zion)
 Trail.create(name: "Watchman Trail", distance_of_trail: 3, elevation: 646, difficulty: random_difficulty, park: zion)
+
+
+80.times do |x|
+    Hike.create(name: Faker::Hipster.unique.word, user: User.all.sample, trail: Trail.all.sample, user_rating: rand(1..10))
+end
