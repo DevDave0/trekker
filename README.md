@@ -1,7 +1,7 @@
 # Trekker
 A hike tracking application 
 
-![cookindex](https://github.com/DevDave0/ruby-project-guidelines-wdc01-seng-ft-060120/blob/master/cookindex.png)
+![trekker](https://github.com/DevDave0/trekker/blob/master/trekker.png)
 
 ## Project Details 
 
